@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <title>Cloud App Builder</title>
+    </head>
+    <body style = "background-color: #0747a6; font-family: 'Lato', sans-serif;">
+        <div class = "container">
+            <center><h1 style = "color: white; margin-top: 15%; font-weight: bold; text-shadow: 5px 5px 5px #012150">Cloud App Builder</h1></center>                        
+            <center><div class = "card shadow p-3 mb-5 bg-white rounded" style = "width: 45%; height: auto; margin-top: 5%; padding: 15px">
+                <form id = "myform" action = "/myapp/test/">{% csrf_token %}
+                    <div class="form-group">
+                        <center><label class = "h2" for="exampleInputEmail1"></label></center><br>
+                        <input id = "inputid" type="text" class="form-control" name = "mytextbox" aria-describedby="emailHelp" placeholder="Enter Github link">
+                        <small id="emailHelp" style = "margin-top: 20px" class="form-text text-muted">This repository will be cloned and built on the cloud</small>
+                    </div>
+                    <center><button id = "mybuttton" style = "background-color: #0747a6" type="submit" name = "mybtn" class="btn btn-primary">Submit</button></center>
+                <span id = "myspan" style = "display: none">Cloning, Migrating and Building your application</span>
+                </form>                
+            </div></center>
+        </div>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <!-- <script>
+            $("#myform").submit(function(e){
+                e.preventDefault()
+                $.ajax({
+                    type: 'GET',
+                    url: 'index/',
+                    data:{
+                        mytextbox: $('inputid').val(),                        
+                        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(res){
+                        console.log(res)
+                    } 
+                })
+                $("#mybutton").html('<div class="spinner-border" role="status"> <span class="sr-only">Loading...</span> </div>')
+                $("#myspan").css('display', 'block')
+            })
+        </script> -->
+    </body>
+</html>
